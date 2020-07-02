@@ -1,76 +1,95 @@
 #include<stdio.h>
 #include<string.h>
 
-struct record{
-    int stud_id; 
-    char stud_name[100]; 
-    char stud_year[10];  
-    float stud_cgpa;
+struct Student
+{
+    int student_id;
+    char student_name[40];
+    int student_year;
+    float student_CGPA;
 };
 
-int main(){
-    //Declarition of struct name
-    struct record Avinash;
-    struct record Neel;
-    struct record Ayush;
-    struct record Yashraj;
-    
-    //stud_id specification
-    Avinash.stud_id = 191407;
-    Neel.stud_id = 191402;
-    Ayush.stud_id = 191398;
-    Yashraj.stud_id = 191350;
+int main()
+{
+    struct Student Stud1;
+    struct Student Stud2;
+    struct Student Stud3;
+    struct Student Stud4;
 
-    //stud_name specification
-    strcpy(Avinash.stud_name, "Avinash Vijayvargiya");
-    strcpy(Neel.stud_name,"Neel Malwatkar");
-    strcpy(Ayush.stud_name,"Ayush Prasad");
-    strcpy(Yashraj.stud_name,"Yashraj Panar");
+    //STUDENT 1 DETAILS
     
-    //stud_year specification
-    strcpy(Avinash.stud_year,"SY");
-    strcpy(Neel.stud_year,"SY");
-    strcpy(Ayush.stud_year,"TY");
-    strcpy(Yashraj.stud_year,"B.Tech");
+    printf("\nEnter student-1 record :");
+    printf("\n\nEnter id: ");
+    scanf("%d", &Stud1.student_id);
+    printf("\nEnter Name :");
+    scanf("%s",Stud1.student_name);
+    printf("\nEnter current year :");
+    scanf("%d",&Stud1.student_year);
+    printf("\nEnter the CGPA :");
+    scanf("%f",&Stud1.student_CGPA);
     
-    //stud_cgpa specification
-    Avinash.stud_cgpa = 8.17f;
-    Neel.stud_cgpa = 8.30f;
-    Ayush.stud_cgpa = 9.0f;
-    Yashraj.stud_cgpa = 8.5f;
+    //STUDENTS 2 DETAILS
     
-    //priting Infomation
-    printf("\n");
-    printf("Printing infomation of Avinash\n");
-    printf("\n");
-    printf("Student ID : %d\n",Avinash.stud_id);
-    printf("Student Full Name : %s\n",Avinash.stud_name);
-    printf("Student Year : %s\n",Avinash.stud_year);
-    printf("Student CGPA : %.2f\n",Avinash.stud_cgpa);
+    printf("\nEnter student-2 record :");
+    printf("\n\nEnter id: ");
+    scanf("%d", &Stud2.student_id);
+    printf("\nEnter Name :");
+    scanf("%s",Stud2.student_name);
+    printf("\nEnter current year :");
+    scanf("%d",&Stud2.student_year);
+    printf("\nEnter the CGPA :");
+    scanf("%f",&Stud2.student_CGPA);
+
+    //STUDENTS 3 DETAILS
     
-    printf("\n");
-    printf("Printing infomation of Neel\n");
-    printf("\n");
-    printf("Student ID : %d\n",Neel.stud_id);
-    printf("Student Full Name : %s\n",Neel.stud_name);
-    printf("Student Year : %s\n",Neel.stud_year);
-    printf("Student CGPA : %.2f\n",Neel.stud_cgpa);
+    printf("\nEnter student-3 record :");
+    printf("\n\nEnter id: ");
+    scanf("%d", &Stud3.student_id);
+    printf("\nEnter Name :");
+    scanf("%s",Stud3.student_name);
+    printf("\nEnter current year :");
+    scanf("%d",&Stud3.student_year);
+    printf("\nEnter the CGPA :");
+    scanf("%f",&Stud3.student_CGPA);
+
+    //STUDENT 4 DETAILS
     
-    printf("\n");
-    printf("Printing infomation of Ayush\n");
-    printf("\n");
-    printf("Student ID : %d\n",Ayush.stud_id);
-    printf("Student Full Name : %s\n",Ayush.stud_name);
-    printf("Student Year : %s\n",Ayush.stud_year);
-    printf("Student CGPA : %.2f\n",Ayush.stud_cgpa);
+    printf("\nEnter student-4 record :");
+    printf("\n\nEnter id: ");
+    scanf("%d", &Stud4.student_id);
+    printf("\nEnter Name :");
+    scanf("%s",Stud4.student_name);
+    printf("\nEnter current year :");
+    scanf("%d",&Stud4.student_year);
+    printf("\nEnter the CGPA :");
+    scanf("%f",&Stud4.student_CGPA);
+
+
+    // Printing the infomation of students
     
-    printf("\n");
-    printf("Printing infomation of Yashraj\n");
-    printf("\n");
-    printf("Student ID : %d\n",Yashraj.stud_id);
-    printf("Student Full Name : %s\n",Yashraj.stud_name);
-    printf("Student Year : %s\n",Yashraj.stud_year);
-    printf("Student CGPA : %.2f\n",Yashraj.stud_cgpa);
+    printf("\n\nStudent-1 record -");
+    printf("\nID of the student is %d", Stud1.student_id);
+    printf("\nName of the student is %s", Stud1.student_name);
+    printf("\nCurrent Year is %d", Stud1.student_year);
+    printf("\nCGPA of the student is %f", Stud1.student_CGPA);
+
+    printf("\n\nStudent-2 record -");
+    printf("\nID of the student is %d", Stud2.student_id);
+    printf("\nName of the student is %s", Stud2.student_name);
+    printf("\nCurrent Year is %d", Stud2.student_year);
+    printf("\nCGPA of the student is %f", Stud2.student_CGPA);
+
+    printf("\n\nStudent-3 record -");
+    printf("\nID of the student is %d", Stud3.student_id);
+    printf("\nName of the student is %s", Stud3.student_name);
+    printf("\nCurrent Year is %d", Stud3.student_year);
+    printf("\nCGPA of the student is %f", Stud3.student_CGPA);
+
+    printf("\n\nStudent-4 record -");
+    printf("\nID of the student is %d", Stud4.student_id);
+    printf("\nName of the student is %s", Stud4.student_name);
+    printf("\nCurrent Year is %d", Stud4.student_year);
+    printf("\nCGPA of the student is %f", Stud4.student_CGPA);
     
     return 0;
 }   
