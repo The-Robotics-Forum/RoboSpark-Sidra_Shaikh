@@ -1,0 +1,72 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//DECLARING THE CLASSS DETIALS
+class Student_details{
+    public:
+    //IF DATA NOT PROVIDE THEN DEFAULT CONDITION
+    string sname = "My_Default_Name";   
+    int sroll=00;
+    int sid=00;
+};
+
+//FUNCATION TO SHOWRANK WHEN ONLY A INTEGER IS PASSED
+void showRank(int srank){
+    cout << srank;
+}
+
+
+//FUNCATION TO SHOWRANK WHEN ONLY STUDENT DETIALS ARE PASSED
+void showRank(string sname, int sroll, int sid){
+    cout << "\nNo integer passed, therefore student details are ---"<< endl;
+    cout << "Name: " << sname << endl;
+    cout << "Roll: " << sroll << endl;
+    cout << "Id: " << sid << endl;
+}
+
+//FUNCATION TO SHOWRANK WHEN A INTEGER AND STUDENT DETIALS ARE PASSED
+void showRank(string sname, int sroll, int sid, int srank){
+    cout << "\nBoth rank and student details are ---"<< endl;
+    cout << "Name: " << sname << endl;
+    cout << "Roll: " << sroll << endl;
+    cout << "Id: " << sid << endl;
+    cout << "Rank: " << srank << endl;
+}
+int main(){
+    int rank;
+    Student_details s1;     
+    int user_in;
+
+    //INPUT 
+    cout << "Enter---\n1. TO GET RANK ONLY...!\n2. TO GET STUDENT DETIALS ONLY....!\n3. TO GET STUDENT DETAILS AS WELL AS RANK...!\nInput : ";
+    cin >> user_in;
+
+    //IF - ELSE IF - ELSE CONDITIONS
+    if (user_in==1){     //TO GET RANK ONLY...!
+        cout << "PASS RANK: ";
+        cin >> rank;
+        cout << "ONLY RANK IS PASEED SO, RANK IS : ";
+        showRank(rank);
+    }else if (user_in==2){    //TO GET STUDENT DETIALS ONLY....!   
+        cout << "\nPASS STUDENT DETIALS --- \n";
+        cout << "STUDENT NAME: ";
+        cin >> s1.sname;
+        cout << "PASS ROLL NUMBER: ";
+        cin >> s1.sroll;
+        cout << "PASS STUDENT ID : ";
+        cin >> s1.sid;   
+        showRank(s1.sname, s1.sroll, s1.sid);
+    }else{   //TO GET STUDENT DETAILS AS WELL AS RANK...!
+        cout << "\nPASS STUDENT DETIALS --- \n";
+        cout << "STUDENT NAME: ";
+        cin >> s1.sname;
+        cout << "PASS ROLL NUMBER: ";
+        cin >> s1.sroll;
+        cout << "PASS STUDENT ID : ";
+        cin >> s1.sid;
+        cout << "PASS RANK: ";
+        cin >> rank;
+        showRank(s1.sname, s1.sroll, s1.sid, rank);
+    }
+    return 0;
+}
