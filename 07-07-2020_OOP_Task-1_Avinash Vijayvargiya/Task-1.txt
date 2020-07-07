@@ -1,0 +1,82 @@
+/*
+Operator Overloading for the example are $ and ?
+where as 
+* and + are used as repetation and concentation Operatorr 
+*/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+//Declaring the class
+class Strings_class{
+	string name;
+	int password;
+	public:
+	string one;
+	string two;
+	string add;
+	Strings_class(){
+	    add ="";
+	    cout<<"Enter 1st Input string: ";
+	    cin>>one;
+	    cout<<"Enter 2nd Input string: ";
+	    cin>>two;
+	}
+	string operator +(string a);
+	string operator *(int n);
+	friend istream& operator >> (istream& input ,Strings_class &obj);
+	friend ostream& operator << (ostream& input ,Strings_class &obj);
+};
+
+//Input stream for the &(And) operator
+istream& operator >> (istream& input ,Strings_class &obj){
+	cout<<"\nEnter Input1: ";
+	input>>obj.name ;
+	cout<<"Enter 6 digit code: ";
+	input>>obj.password;
+	return input;
+}
+
+//Output stream for the &(And operator)
+ostream& operator << (ostream& output ,Strings_class &obj){
+	output <<"\nFirst Input :"<<obj.name<<endl;
+	output <<"Your code  : "<<obj.password<<endl;
+	return output;
+}
+
+//Code for  *(Repetation Operator) 
+string Strings_class :: operator *(int n){
+	for(int i=0;i<n;i++)
+	add = add + one;
+    return add;	
+}
+
+//Code for +(Concentation Operator)
+string Strings_class :: operator + (string a){
+    add = one+two;
+    return add;
+}
+
+// Main Funcation
+int main(){
+	char ch;
+	Strings_class s;
+	int i;
+	string store;
+	cout<<"Which operator do u want to overload (Press the specfic sign)\n1.*\n2.+\n3.?\n4.$";
+	cin>>ch;
+	if(ch=='+'){
+	store = s.one + " " + s.two ;
+	cout<<"\nOutput string : "<<store<<endl;
+    }
+	else if(ch=='$'){
+		cin>>s;
+		cout<<s;
+	}
+    else if(ch=='*'){
+	cout<<"\nEnter a INT: ";
+	cin>>i;
+    store = s * i;
+	cout<<"\nOutput string : "<<store<<endl;
+    }
+}
