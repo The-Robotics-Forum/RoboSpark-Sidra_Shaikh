@@ -1,0 +1,164 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+// CLASS CREATION FOR PERSONAL DATA...
+class personalData{
+    protected:
+        string name;
+        string surname;
+        string address;
+        string mobileNum;
+        string dob;
+
+        // Default Cons.
+        personalData(){
+            cout << "IN PERSONAL CLASS...!" << endl;
+        }
+
+        // ENTERING THE PERSONAL DATA...
+        void setPersonalData(){
+            cout << "What is your" << endl;
+            cout << ">>>> First name: ";
+            cin >> name;
+            cout << ">>>> Surname: ";
+            cin >> surname;
+            cout << ">>>> Address: " << endl;
+            fflush(stdin);
+            getline(cin, address);
+
+            moblieNumber:
+            cout << ">>>> 10-digit mobile Num: ";
+            cin >> mobileNum;
+            if((mobileNum.size())!=10){
+                cout << "Number is less than or greater than 10 digits" << endl;
+                goto moblieNumber;
+            }
+            dateofBirth:
+            cout << ">>>> Date of Birth in DD-MM-YYYY format: ";
+            cin >> dob;
+            if((dob.size())!=10){
+                cout << "Invalid Format, Enter again" << endl;
+                goto dateofBirth;
+            }
+        }
+
+        //GETTER OF PERSONAL DATA
+        void getPersonalData(){
+            cout << "First Name: " << name << endl;
+            cout << "Surname: " << surname << endl;
+            cout << "Address: " << address << endl;
+            cout << "Mobile Number: " << mobileNum << endl;
+            cout << "Date Of Birth: " << dob << endl;
+        }
+};
+
+// CLASS FOR PROFESSIONAL DATA
+class professionalData{
+    protected:
+        string nameOfOrganization;
+        string jobProfile;
+        string project;
+
+        // Default Const
+        professionalData(){
+            cout << "IN PROFESSIONAL CLASSS...!" << endl;
+        }
+
+        // SETTER FOR PROFESSIONAL DATA
+        void setProfessionalData(){
+            cout << ">>>> Name of organization you work for: ";
+            fflush(stdin);
+            getline(cin, nameOfOrganization);
+
+            cout << ">>>>Your job profile: " << endl;
+            fflush(stdin);
+            getline(cin, jobProfile);
+
+            cout << ">>>> Some interesting projects you have worked on: " << endl;
+            fflush(stdin);
+            getline(cin, project);
+        }
+
+        // GETTER FOR PROFESSIONAL DATA
+        void getProfessionalData(){
+            cout << "Name Of Organization: " << nameOfOrganization << endl;
+            cout << "Job Profile: " << jobProfile << endl;
+            cout << "Projects Done: " << project << endl;
+        }
+};
+
+//CLASS FOR ACADEMIC DATA
+class academicData{
+    protected:
+        string yearOfPassing;
+        string cgpa;
+        string collegeName;
+        string branch;
+
+        // Default Const
+        academicData(){
+            cout << "IN ACADEMIC CLASS...!" << endl;
+        }
+
+        // SETTER FOR ACADEMIC DATA
+        void setAcademicData(){
+            yearOfPassing:
+            cout << ">>>> Enter the year of passing in YYYY format: ";
+            cin >> yearOfPassing;
+            if((yearOfPassing.size())!=4){
+                cout << "Invalid Format, please try again" << endl;
+                goto yearOfPassing;
+            }
+            cout << ">>>> Your CGPA: ";
+            cin >> cgpa;
+            cout << ">>>> Your College name: ";
+            fflush(stdin);
+            getline(cin, collegeName);
+            cout << ">>>> Your branch name: ";
+            fflush(stdin);
+            getline(cin, branch);
+        }
+        // GETTER FOR ACADEMIC DATA
+        void getAcademicData(){
+            cout << "Year Of Passing: " << yearOfPassing << endl;
+            cout << "CGPA: " << cgpa << endl;
+            cout << "College Name: " << collegeName << endl;
+            cout << "Branch: " << branch << endl;
+        }
+};
+// Main Child Class
+class bioData : public personalData, public professionalData, public academicData {
+    public:
+        bioData(){
+            cout << "IN BIO DATA CLASS...!" << endl;
+        }
+        // SETTER FOR DATA
+        void setData(){
+            cout << "\nEnter your Personal Data => " << endl;
+            setPersonalData();
+            cout << "\nEnter your Professional Data => " << endl;
+            setProfessionalData();
+            cout << "\nEnter your Academic Data => " << endl;
+            setAcademicData();
+            cout << "\nREGISTERED SUCCESSFULLY....!!!" << endl;
+            cout << "PRESS ENTER KEY TO PRINT DATA" << endl;
+            getchar();
+        }
+
+        // GETTER FOR DATA
+        void getData(){
+            cout << "Personal Data => " << endl;
+            getPersonalData();
+            cout << "\nProfessional Data => " << endl;
+            getProfessionalData();
+            cout << "\nAcademic Data => " << endl;
+            getAcademicData();
+        }
+};
+
+// MAIN FUNCATION
+int main(){
+    bioData student1;      // OBJ FOR CLASS BIODATA
+    student1.setData();   // SETTER student1 DATA
+    student1.getData();  // GETTER student1 data
+}
